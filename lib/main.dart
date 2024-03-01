@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/ui/auth/login/login_screen.dart';
 import 'package:rahaf/ui/auth/register/register.dart';
-import 'package:rahaf/ui/splash/splash_screen.dart';
 import 'package:rahaf/utils/app_assets.dart';
 
 void main() {
@@ -24,9 +23,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: AnimatedSplashScreen(splashIconSize: 700,backgroundColor: const Color(0xff397FE6), splashTransition: SplashTransition.fadeTransition,splash: Image.asset(AppAssets.splash), nextScreen: LoginScreen()),
-            
             routes: {
-              SplashScreen.routeName : (context)=> const SplashScreen(),
               RegisterScreen.routeName : (context)=> const RegisterScreen(),
               LoginScreen.routeName : (context)=> LoginScreen(),
             },

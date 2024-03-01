@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rahaf/ui/auth/register/register.dart';
 import 'package:rahaf/utils/app_colors.dart';
 import 'package:rahaf/utils/text_field_item.dart';
 
@@ -55,24 +56,29 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              TextFieldItem(hintText: "phone",
-               controller: phoneNumController, keyboardType: null, suffixIcon: const Icon(Icons.phone_android ),),
               TextFieldItem(
-                  hintText: "password",
-                  controller: passwordController,
-                  isObsecure: isObsecure,
-                  suffixIcon: InkWell(
-                      child: isObsecure
-                          ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility, color: Color(0xff7D848D)),
-                      onTap: () {
-                        if (isObsecure) {
-                          isObsecure = false;
-                        } else {
-                          isObsecure = true;
-                        }
-                        setState(() {});
-                      }),),
+                hintText: "phone",
+                controller: phoneNumController,
+                keyboardType: null,
+                suffixIcon: const Icon(Icons.phone_android),
+              ),
+              TextFieldItem(
+                hintText: "password",
+                controller: passwordController,
+                isObsecure: isObsecure,
+                suffixIcon: InkWell(
+                    child: isObsecure
+                        ? Icon(Icons.visibility_off)
+                        : Icon(Icons.visibility, color: Color(0xff7D848D)),
+                    onTap: () {
+                      if (isObsecure) {
+                        isObsecure = false;
+                      } else {
+                        isObsecure = true;
+                      }
+                      setState(() {});
+                    }),
+              ),
               Padding(
                 padding: EdgeInsets.only(right: 10.w),
                 child: Text(
@@ -89,6 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
                 child: ElevatedButton(
                   onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.blueColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(16.r)))),
                   child: Container(
                     height: 56.h,
                     width: 335.w,
@@ -103,11 +114,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.blueColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(16.r)))),
                 ),
               ),
               Row(
@@ -124,13 +130,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     width: 5.w,
                   ),
-                  Text(
-                    "Sign up",
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: AppColors.blueColor,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.normal),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(RegisterScreen.routeName);
+                    },
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                          fontFamily: 'Itim',
+                          color: AppColors.blueColor,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.normal),
+                    ),
                   )
                 ],
               )
