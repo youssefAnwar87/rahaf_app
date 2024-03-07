@@ -32,15 +32,30 @@ class TextFieldItem extends StatelessWidget {
             decoration: InputDecoration(
               fillColor: const Color.fromARGB(255, 220, 220, 220),
               filled: true,
+              errorStyle: TextStyle(fontSize: 15.sp),
+              errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.r),
+                  borderSide: BorderSide(
+                      width: 3,
+                      color: Colors.red
+                  )
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.r),
+                  borderSide: BorderSide(
+                      width: 3,
+                      color: Colors.red
+                  )
+              ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.r),
               ),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14.r),
                   borderSide: BorderSide.none),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(14.r),
-              ),
+              // errorBorder: OutlineInputBorder(
+              //   borderRadius: BorderRadius.circular(14.r),
+              // ),
               labelText: hintText,
               labelStyle: Theme.of(context)
                   .textTheme
