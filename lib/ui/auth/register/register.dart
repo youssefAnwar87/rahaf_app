@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 120.h, right: 120.w, left: 120.w, bottom: 12.h),
+                      top: 120.h, right: 110.w, left: 110.w, bottom: 12.h),
                   child: Text(
                     "Sign up now",
                     style: TextStyle(
@@ -109,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       return "please enter your mobile number";
                     }
                     if(value.length!=11){
-                      return "invalid number";
+                      return "The phone number should be at least 11 number";
                     }
                     return null;
                   },
