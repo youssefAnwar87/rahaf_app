@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 
-class OTPver extends StatelessWidget {
+class OTPVerificationScreen extends StatelessWidget {
   static const String routeName = "otp screen";
 
-  const OTPver({super.key});
+  const OTPVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<String> myList = List.generate(4, (index) => '');
     return Scaffold(
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.whiteColor,
@@ -31,10 +30,8 @@ class OTPver extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: SingleChildScrollView(
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-
             children: [
               Padding(
                 padding: EdgeInsets.only(
@@ -49,7 +46,7 @@ class OTPver extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.w,right: 15.w,bottom: 35.h),
+                padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 35.h),
                 child: Text(
                   textAlign: TextAlign.center,
                   "Please check your email www.uihut@gmail.com to see the verification code",
@@ -73,31 +70,28 @@ class OTPver extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.only(top: 16.h,bottom : 40.h, left: 10.w,right: 10.w),
+                padding: EdgeInsets.only(
+                    top: 16.h, bottom: 40.h, left: 10.w, right: 10.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: AppColors.greyColor
-
-                      ),
+                          borderRadius: BorderRadius.circular(16),
+                          color: AppColors.greyColor),
                       height: 68,
                       width: 64,
                       child: TextFormField(
-                        onChanged: (value){
-                          if(value.length ==1){
+                        onChanged: (value) {
+                          if (value.length == 1) {
                             myList[0] = value;
                             print(myList);
                             FocusScope.of(context).nextFocus();
                           }
-                          },
+                        },
                         decoration: InputDecoration(
                           hintText: "0",
-                          hintStyle: TextStyle(
-                            color: Colors.white
-                          ),
+                          hintStyle: TextStyle(color: Colors.white),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14.r),
                           ),
@@ -121,14 +115,12 @@ class OTPver extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: AppColors.greyColor
-
-                      ),
+                          color: AppColors.greyColor),
                       height: 68,
                       width: 64,
                       child: TextFormField(
-                        onChanged: (value){
-                          if(value.length ==1){
+                        onChanged: (value) {
+                          if (value.length == 1) {
                             myList[1] = value;
                             print(myList);
                             FocusScope.of(context).nextFocus();
@@ -136,9 +128,7 @@ class OTPver extends StatelessWidget {
                         },
                         decoration: InputDecoration(
                           hintText: "0",
-                          hintStyle: TextStyle(
-                              color: Colors.white
-                          ),
+                          hintStyle: TextStyle(color: Colors.white),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14.r),
                           ),
@@ -162,14 +152,12 @@ class OTPver extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: AppColors.greyColor
-
-                      ),
+                          color: AppColors.greyColor),
                       height: 68,
                       width: 64,
                       child: TextFormField(
-                        onChanged: (value){
-                          if(value.length ==1){
+                        onChanged: (value) {
+                          if (value.length == 1) {
                             myList[2] = value;
                             print(myList);
                             FocusScope.of(context).nextFocus();
@@ -177,9 +165,7 @@ class OTPver extends StatelessWidget {
                         },
                         decoration: InputDecoration(
                           hintText: "0",
-                          hintStyle: TextStyle(
-                              color: Colors.white
-                          ),
+                          hintStyle: TextStyle(color: Colors.white),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14.r),
                           ),
@@ -203,14 +189,12 @@ class OTPver extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: AppColors.greyColor
-
-                      ),
+                          color: AppColors.greyColor),
                       height: 68,
                       width: 64,
                       child: TextFormField(
-                        onChanged: (value){
-                          if(value.length ==1){
+                        onChanged: (value) {
+                          if (value.length == 1) {
                             myList[3] = value;
                             print(myList);
                             FocusScope.of(context).nextFocus();
@@ -218,9 +202,7 @@ class OTPver extends StatelessWidget {
                         },
                         decoration: InputDecoration(
                           hintText: "0",
-                          hintStyle: TextStyle(
-                              color: Colors.white
-                          ),
+                          hintStyle: TextStyle(color: Colors.white),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14.r),
                           ),
@@ -241,23 +223,18 @@ class OTPver extends StatelessWidget {
                             fontWeight: FontWeight.normal),
                       ),
                     ),
-
-
-
                   ],
                 ),
               ),
               Padding(
-                 padding: EdgeInsets.only(left: 20.w,right: 20.w,bottom: 16.h),
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 16.h),
                 child: ElevatedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.blueColor,
                       shape: RoundedRectangleBorder(
                           borderRadius:
-                          BorderRadius.all(Radius.circular(16.r)))),
+                              BorderRadius.all(Radius.circular(16.r)))),
                   child: Container(
                     height: 56.h,
                     width: 335.w,
@@ -300,9 +277,6 @@ class OTPver extends StatelessWidget {
                   ],
                 ),
               ),
-
-
-
             ],
           ),
         ),

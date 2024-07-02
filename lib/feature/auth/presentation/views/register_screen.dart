@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/ui/auth/login/login_screen.dart';
+import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
 
-import '../../../utils/app_colors.dart';
-import '../../../utils/text_field_item.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/customs/text_field_item.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const String routeName = "register screen";
