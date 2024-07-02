@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/utils/app_colors.dart';
-import 'package:rahaf/utils/dialog_utils.dart';
-import 'package:rahaf/utils/text_field_item.dart';
+import 'package:rahaf/core/utils/app_colors.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/dialog_utils.dart';
+import 'package:rahaf/core/customs/text_field_item.dart';
 
-class ForgetPassword extends StatelessWidget {
+class ForgetPasswordScreen extends StatelessWidget {
   static const String routeName = "forgetPassword screen";
 
+  const ForgetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     var forgetPasswordController = TextEditingController();
     var formKey = GlobalKey<FormState>();
 
-
     return Scaffold(
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.whiteColor,
@@ -35,10 +34,8 @@ class ForgetPassword extends StatelessWidget {
         child: Container(
           color: Colors.white,
           child: SingleChildScrollView(
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-
               children: [
                 Padding(
                   padding: EdgeInsets.only(
@@ -53,8 +50,8 @@ class ForgetPassword extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
-                      right: 59.w, left: 59.w, bottom: 40.h),
+                  padding:
+                      EdgeInsets.only(right: 59.w, left: 59.w, bottom: 40.h),
                   child: Text(
                     textAlign: TextAlign.center,
                     "Enter your phone number to reset  your password",
@@ -65,32 +62,34 @@ class ForgetPassword extends StatelessWidget {
                         fontWeight: FontWeight.normal),
                   ),
                 ),
-                TextFieldItem(hintText: "Phone or E-mail",
+                TextFieldItem(
+                  hintText: "Phone or E-mail",
                   controller: forgetPasswordController,
                   keyboardType: TextInputType.phone,
-                  validator: (value){
-                    if(value == null || value.trim().isEmpty){
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
                       return "please enter your mobile number";
                     }
-                    if(value.length!=11){
+                    if (value.length != 11) {
                       return "The phone number should be at least 11 number";
                     }
                     return null;
                   },
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                   child: ElevatedButton(
                     onPressed: () {
                       // if(formKey.currentState?.validate() == true) {
-                        DialogUtils.ShowDialog(context, "Check your messages");
+                      DialogUtils.ShowDialog(context, "Check your messages");
                       // }
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.blueColor,
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                            BorderRadius.all(Radius.circular(16.r)))),
+                                BorderRadius.all(Radius.circular(16.r)))),
                     child: Container(
                       height: 56.h,
                       width: 335.w,
@@ -107,8 +106,6 @@ class ForgetPassword extends StatelessWidget {
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),

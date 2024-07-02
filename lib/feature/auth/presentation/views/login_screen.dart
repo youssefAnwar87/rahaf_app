@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/ui/auth/forgetPassword/forget_password.dart';
-import 'package:rahaf/ui/auth/register/register.dart';
-import 'package:rahaf/utils/app_colors.dart';
-import 'package:rahaf/utils/text_field_item.dart';
+import 'package:rahaf/feature/auth/presentation/views/forget_password_screen.dart';
+import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
+import 'package:rahaf/core/utils/app_colors.dart';
+import 'package:rahaf/core/customs/text_field_item.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "login screen";
+
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -17,7 +19,6 @@ class _LoginScreenState extends State<LoginScreen> {
   var passwordController = TextEditingController();
   bool isObsecure = true;
   var formKey = GlobalKey<FormState>();
-
 
   @override
   Widget build(BuildContext context) {
@@ -46,16 +47,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   right: 50.w,
                   bottom: 50.h,
                 ),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      "Please sign in to continue our app",
-                      style: TextStyle(
-                          fontFamily: 'Itim',
-                          color: AppColors.greyColor,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.normal),
-                    ),
+                child: Center(
+                  child: Text(
+                    "Please sign in to continue our app",
+                    style: TextStyle(
+                        fontFamily: 'Itim',
+                        color: AppColors.greyColor,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
               ),
@@ -63,11 +62,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: "phone",
                 controller: phoneNumController,
                 keyboardType: TextInputType.phone, // Update this line
-                validator: (value){
-                  if(value == null || value.trim().isEmpty){
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
                     return "please enter your mobile number";
                   }
-                  if(value.length!=11){
+                  if (value.length != 11) {
                     return "The phone number should be at least 11 number";
                   }
                   return null;
@@ -78,11 +77,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: "password",
                 controller: passwordController,
                 isObsecure: isObsecure,
-                validator: (value){
-                  if(value == null || value.trim().isEmpty){
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
                     return "please enter your password";
                   }
-                  if(value.trim()!.length < 6 || value.trim()!.length > 30){
+                  if (value.trim()!.length < 6 || value.trim()!.length > 30) {
                     return "password should be >6 & <30";
                   }
                   return null;
@@ -101,8 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     }),
               ),
               InkWell(
-                onTap: (){
-                  Navigator.pushNamed(context, ForgetPassword.routeName);
+                onTap: () {
+                  Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
                 },
                 child: Padding(
                   padding: EdgeInsets.only(right: 10.w),
@@ -121,9 +120,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
                 child: ElevatedButton(
                   onPressed: () {
-                  if(formKey.currentState?.validate() == true) {
-                  }
-                    },
+                    if (formKey.currentState?.validate() == true) {}
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.blueColor,
                       shape: RoundedRectangleBorder(
