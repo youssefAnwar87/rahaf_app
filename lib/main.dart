@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/feature/auth/presentation/views/OTP_Verification_screen.dart';
+import 'package:rahaf/feature/auth/presentation/views/otp_verification_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/forget_password_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: const Color(0xff397FE6),
                 splashTransition: SplashTransition.fadeTransition,
                 splash: Image.asset(AppAssets.splash),
-                nextScreen: LoginScreen()),
+                nextScreen: ForgetPasswordScreen()),
             routes: {
               RegisterScreen.routeName: (context) => const RegisterScreen(),
               LoginScreen.routeName: (context) => LoginScreen(),

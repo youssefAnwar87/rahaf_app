@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/core/utils/app_colors.dart';
-import 'package:rahaf/feature/auth/presentation/widgets/custom_button.dart';
-import 'package:rahaf/feature/auth/presentation/widgets/dialog_utils.dart';
+import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
+class ForgetPasswordScreen extends StatefulWidget {
   static const String routeName = "forgetPassword screen";
 
-   ForgetPasswordScreen({super.key});
+  const ForgetPasswordScreen({super.key});
+
+  @override
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
+}
+
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   var forgetPasswordController = TextEditingController();
+
   var formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
 
@@ -19,9 +27,9 @@ class ForgetPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.whiteColor,
-        title: Text("Forget Password"),
+        title: const Text("Forget Password"),
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left, // Change this to the desired icon
             color: AppColors.blackColor, // Change this to the desired color
           ),
@@ -38,31 +46,8 @@ class ForgetPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: 62.h, right: 96.w, left: 96.w, bottom: 12.h),
-                  child: Text(
-                    "Forget Password",
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: Colors.black,
-                        fontSize: 25.sp,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.only(right: 59.w, left: 59.w, bottom: 40.h),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    "Enter your phone number to reset  your password",
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: AppColors.greyColor,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ),
+                const HeaderWidget(headerName: "Forget Password", headerLine: "Enter your phone number to reset  your password"),
+                
                 TextFieldItem(
                   hintText: "Phone or E-mail",
                   controller: forgetPasswordController,

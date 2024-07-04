@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/feature/auth/presentation/views/forget_password_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
-import 'package:rahaf/core/utils/app_colors.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
-import 'package:rahaf/feature/auth/presentation/widgets/custom_button.dart';
+import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
@@ -65,8 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   suffixIcon: InkWell(
                       child: isObsecure
-                          ? Icon(Icons.visibility_off)
-                          : Icon(Icons.visibility, color: Color(0xff7D848D)),
+                          ? const Icon(Icons.visibility_off)
+                          : const Icon(Icons.visibility, color: Color(0xff7D848D)),
                       onTap: () {
                         if (isObsecure) {
                           isObsecure = false;

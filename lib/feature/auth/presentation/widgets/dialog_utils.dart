@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/feature/auth/presentation/views/OTP_Verification_screen.dart';
+import 'package:rahaf/feature/auth/presentation/views/otp_verification_screen.dart';
 import 'package:rahaf/core/utils/app_assets.dart';
 import 'package:rahaf/core/utils/app_colors.dart';
 
@@ -16,7 +15,6 @@ class DialogUtils {
             content: Row(
               children: [
                 Text(message, style: TextStyle(color: AppColors.whiteColor)),
-                Spacer(),
                 CircularProgressIndicator(color: AppColors.whiteColor),
               ],
             ),
@@ -34,15 +32,14 @@ class DialogUtils {
         barrierDismissible: false,
         builder: (_) {
           return AlertDialog(
+            
             shape: RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.circular(24.r), // Adjust the border radius here
             ),
             backgroundColor: AppColors.whiteColor,
-            content: Container(
-              height: 110.h,
+            content: IntrinsicHeight(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +67,6 @@ class DialogUtils {
                         fontSize: 18.sp,
                         fontWeight: FontWeight.normal),
                   ),
-                  Spacer(),
                   Text(
                     textAlign: TextAlign.center,
                     "We have send password recovery instruction to your phone number",
