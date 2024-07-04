@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:rahaf/core/utils/app_colors.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rahaf/core/theme/app_colors.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/dialog_utils.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
-  static const String routeName = "forgetPassword screen";
 
   const ForgetPasswordScreen({super.key});
 
@@ -32,7 +32,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             color: AppColors.blackColor, // Change this to the desired color
           ),
           onPressed: () {
-            Navigator.of(context).pop(); // Navigate back to the previous screen
+            GoRouter.of(context).pop(); // Navigate back to the previous screen
           },
         ),
       ),
@@ -62,11 +62,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     return null;
                   },
                 ),
-                CustomButton( onPressed: () {
-                  if (formKey.currentState?.validate()  == true) {
-            DialogUtils.kShowDialog(context, "Check your messages");
-          }
-                },textInButton: "Reset Password"),
+                CustomButton(
+                    onPressed: () {
+                      if (formKey.currentState?.validate() == true) {
+                        DialogUtils.kShowDialog(context, "Check your messages");
+                      }
+                    },
+                    textInButton: "Reset Password"),
               ],
             ),
           ),

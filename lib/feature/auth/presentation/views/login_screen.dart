@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/feature/auth/presentation/views/forget_password_screen.dart';
-import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const String routeName = "login screen";
 
   const LoginScreen({super.key});
 
@@ -33,7 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const HeaderWidget(headerName: "Sign in now", headerLine:"Please sign in to continue our app",),
+                const HeaderWidget(
+                  headerName: "Sign in now",
+                  headerLine: "Please sign in to continue our app",
+                ),
                 TextFieldItem(
                   hintText: "phone",
                   controller: phoneNumController,
@@ -65,7 +67,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   suffixIcon: InkWell(
                       child: isObsecure
                           ? const Icon(Icons.visibility_off)
-                          : const Icon(Icons.visibility, color: Color(0xff7D848D)),
+                          : const Icon(Icons.visibility,
+                              color: Color(0xff7D848D)),
                       onTap: () {
                         if (isObsecure) {
                           isObsecure = false;
@@ -77,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
+                    GoRouter.of(context).push(RoutesNames.forgetPassword);
                   },
                   child: Padding(
                     padding: EdgeInsets.only(right: 10.w),
@@ -92,12 +95,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                CustomButton( onPressed: () {
-                  
-                },textInButton: "Sign in",),
-                const FooterWidget(footerLine:"Don't have an account?",
+                CustomButton(
+                  onPressed: () {},
+                  textInButton: "Sign in",
+                ),
+                const FooterWidget(
+                    footerLine: "Don't have an account?",
                     footerNavigationTextButton: "Sign up",
-                    nextScreen: RegisterScreen.routeName),
+                    nextScreen: RoutesNames.register),
               ],
             ),
           ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/feature/auth/presentation/views/otp_verification_screen.dart';
-import 'package:rahaf/core/utils/app_assets.dart';
-import 'package:rahaf/core/utils/app_colors.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rahaf/core/routes/routes_names.dart';
+import 'package:rahaf/core/theme/app_assets.dart';
+import 'package:rahaf/core/theme/app_colors.dart';
 
 class DialogUtils {
   static void showLoading(BuildContext context, String message) {
@@ -24,7 +25,7 @@ class DialogUtils {
   }
 
   static void hideLoading(BuildContext context) {
-    Navigator.pop(context);
+    GoRouter.of(context).pop();
   }
 
   static void kShowDialog(BuildContext context, String title) {
@@ -82,8 +83,7 @@ class DialogUtils {
             actions: [
               TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(
-                        context, OTPVerificationScreen.routeName);
+                    GoRouter.of(context).push(RoutesNames.otp);
                   },
                   child: const Text("Ok",
                       style: TextStyle(color: AppColors.blackColor)))

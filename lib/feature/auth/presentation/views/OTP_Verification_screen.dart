@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/cubit/otp_cubit.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/pinput_widget.dart';
 
-import '../../../../core/utils/app_colors.dart';
+import '../../../../core/theme/app_colors.dart';
 
 class OTPVerificationScreen extends StatelessWidget {
-  static const String routeName = "otp screen";
 
   OTPVerificationScreen({super.key});
 
@@ -36,7 +36,7 @@ class OTPVerificationScreen extends StatelessWidget {
               color: AppColors.blackColor,
             ),
             onPressed: () {
-              Navigator.of(context).pop();
+              GoRouter.of(context).pop();
             },
           ),
         ),
@@ -68,9 +68,7 @@ class OTPVerificationScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 40.w, top: 16.w),
                   child: PinputWidget(controller: _controller),
                 ),
-                CustomButton(onPressed: () {
-                  
-                } ,textInButton: "Verify"),
+                CustomButton(onPressed: () {}, textInButton: "Verify"),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: BlocBuilder<OTPCubit, int>(

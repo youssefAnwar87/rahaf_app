@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-import 'package:rahaf/core/utils/app_colors.dart';
+import 'package:rahaf/core/theme/app_colors.dart';
 
 class PinputWidget extends StatelessWidget {
   const PinputWidget({super.key, required this.controller, this.isError});

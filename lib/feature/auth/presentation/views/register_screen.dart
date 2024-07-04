@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
+import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/dropdown_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
@@ -8,7 +8,6 @@ import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 import '../../../../core/customs/text_field_item.dart';
 
 class RegisterScreen extends StatefulWidget {
-  static const String routeName = "register screen";
 
   const RegisterScreen({super.key});
 
@@ -118,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },textInButton: "Sign up",),
                 const FooterWidget(footerLine:"Already have an account?",
                     footerNavigationTextButton: "Sign in",
-                    nextScreen: LoginScreen.routeName,)
+                    nextScreen: RoutesNames.login,)
               ],
             ),
           ),
