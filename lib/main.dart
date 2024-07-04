@@ -32,12 +32,12 @@ class MyApp extends StatelessWidget {
                 backgroundColor: const Color(0xff397FE6),
                 splashTransition: SplashTransition.fadeTransition,
                 splash: Image.asset(AppAssets.splash),
-                nextScreen: ForgetPasswordScreen()),
+                nextScreen: const LoginScreen()),
             routes: {
               RegisterScreen.routeName: (context) => const RegisterScreen(),
-              LoginScreen.routeName: (context) => LoginScreen(),
+              LoginScreen.routeName: (context) => const LoginScreen(),
               ForgetPasswordScreen.routeName: (context) =>
-                  ForgetPasswordScreen(),
+                  const ForgetPasswordScreen(),
               OTPVerificationScreen.routeName: (context) =>
                   OTPVerificationScreen(),
             },

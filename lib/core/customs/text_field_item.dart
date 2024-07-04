@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class TextFieldItem extends StatelessWidget {
-  String hintText;
-  Widget? suffixIcon;
-  bool isObsecure;
-  var keyboardType;
-  String? Function(String?)? validator;
-  TextEditingController controller;
+  final String hintText;
+  final Widget? suffixIcon;
+  final bool isObsecure;
+  final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
+  final TextEditingController controller;
 
-  TextFieldItem({
+  const TextFieldItem({
     Key? key,
     required this.hintText,
     this.suffixIcon,
@@ -35,14 +35,14 @@ class TextFieldItem extends StatelessWidget {
               errorStyle: TextStyle(fontSize: 15.sp),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.r),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                       width: 3,
                       color: Colors.red
                   )
               ),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.r),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                       width: 3,
                       color: Colors.red
                   )

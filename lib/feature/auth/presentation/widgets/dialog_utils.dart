@@ -14,8 +14,9 @@ class DialogUtils {
             backgroundColor: Theme.of(context).primaryColor,
             content: Row(
               children: [
-                Text(message, style: TextStyle(color: AppColors.whiteColor)),
-                CircularProgressIndicator(color: AppColors.whiteColor),
+                Text(message,
+                    style: const TextStyle(color: AppColors.whiteColor)),
+                const CircularProgressIndicator(color: AppColors.whiteColor),
               ],
             ),
           );
@@ -26,13 +27,12 @@ class DialogUtils {
     Navigator.pop(context);
   }
 
-  static void ShowDialog(BuildContext context, String title) {
+  static void kShowDialog(BuildContext context, String title) {
     showDialog(
         context: context,
         barrierDismissible: false,
         builder: (_) {
           return AlertDialog(
-            
             shape: RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.circular(24.r), // Adjust the border radius here
@@ -47,7 +47,7 @@ class DialogUtils {
                       CircleAvatar(
                         backgroundColor: Colors.blue,
                         radius: 20.r,
-                        child: ImageIcon(
+                        child: const ImageIcon(
                           AssetImage(AppAssets.forgetPassword),
                           size: 45,
                           color: Colors.white,
@@ -55,7 +55,7 @@ class DialogUtils {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
@@ -85,8 +85,8 @@ class DialogUtils {
                     Navigator.pushNamed(
                         context, OTPVerificationScreen.routeName);
                   },
-                  child:
-                      Text("Ok", style: TextStyle(color: AppColors.blackColor)))
+                  child: const Text("Ok",
+                      style: TextStyle(color: AppColors.blackColor)))
             ],
           );
         });

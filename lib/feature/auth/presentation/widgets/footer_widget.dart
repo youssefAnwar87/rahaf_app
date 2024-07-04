@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/core/utils/app_colors.dart';
 
 class FooterWidget extends StatelessWidget {
-  String footerLine;
-  String footerNavigationTextButton;
-  String nextScreen;
-  FooterWidget({required this.footerLine,required this.footerNavigationTextButton,
+  final String footerLine;
+  final String footerNavigationTextButton;
+  final String nextScreen;
+  const FooterWidget({super.key, required this.footerLine,required this.footerNavigationTextButton,
     required this.nextScreen
   });
 

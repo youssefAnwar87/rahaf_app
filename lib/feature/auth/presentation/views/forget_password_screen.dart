@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/core/utils/app_colors.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/dialog_utils.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -21,8 +21,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -46,8 +44,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const HeaderWidget(headerName: "Forget Password", headerLine: "Enter your phone number to reset  your password"),
-                
+                const HeaderWidget(
+                    headerName: "Forget Password",
+                    headerLine:
+                        "Enter your phone number to reset  your password"),
                 TextFieldItem(
                   hintText: "Phone or E-mail",
                   controller: forgetPasswordController,
@@ -62,8 +62,11 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     return null;
                   },
                 ),
-                CustomButton(formKey: formKey, textInButton:  "Reset Password"),
-
+                CustomButton( onPressed: () {
+                  if (formKey.currentState?.validate()  == true) {
+            DialogUtils.kShowDialog(context, "Check your messages");
+          }
+                },textInButton: "Reset Password"),
               ],
             ),
           ),

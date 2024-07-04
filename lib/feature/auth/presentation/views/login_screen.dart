@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                HeaderWidget(headerName: "Sign in now", headerLine:"Please sign in to continue our app",),
+                const HeaderWidget(headerName: "Sign in now", headerLine:"Please sign in to continue our app",),
                 TextFieldItem(
                   hintText: "phone",
                   controller: phoneNumController,
@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (value == null || value.trim().isEmpty) {
                       return "please enter your password";
                     }
-                    if (value.trim()!.length < 6 || value.trim()!.length > 30) {
+                    if (value.trim().length < 6 || value.trim().length > 30) {
                       return "password should be >6 & <30";
                     }
                     return null;
@@ -92,8 +92,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                CustomButton(formKey: formKey,textInButton: "Sign in",),
-                FooterWidget(footerLine:"Don't have an account?",
+                CustomButton( onPressed: () {
+                  
+                },textInButton: "Sign in",),
+                const FooterWidget(footerLine:"Don't have an account?",
                     footerNavigationTextButton: "Sign up",
                     nextScreen: RegisterScreen.routeName),
               ],

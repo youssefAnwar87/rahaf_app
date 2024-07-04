@@ -10,10 +10,11 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
           padding: EdgeInsets.only(
-              top: 120.h, right: 120.w, left: 120.w, bottom: 12.h),
+              top: 120.h , bottom: 12.h),
           child: Text(
             headerName,
             style: TextStyle(

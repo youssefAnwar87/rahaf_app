@@ -48,7 +48,8 @@ class OTPVerificationScreen extends StatelessWidget {
               children: [
                 const HeaderWidget(
                   headerName: "OTP Verification",
-                  headerLine: "Please check your email www.uihut@gmail.com to see the verification code",
+                  headerLine:
+                      "Please check your email www.uihut@gmail.com to see the verification code",
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.w),
@@ -64,10 +65,12 @@ class OTPVerificationScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 40, top: 16),
+                  padding: EdgeInsets.only(bottom: 40.w, top: 16.w),
                   child: PinputWidget(controller: _controller),
                 ),
-                CustomButton(textInButton: "Verify"),
+                CustomButton(onPressed: () {
+                  
+                } ,textInButton: "Verify"),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: BlocBuilder<OTPCubit, int>(
@@ -75,7 +78,7 @@ class OTPVerificationScreen extends StatelessWidget {
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
+                          InkWell(
                             onTap: state == 0
                                 ? () {
                                     context.read<OTPCubit>().resetTimer();
@@ -87,7 +90,9 @@ class OTPVerificationScreen extends StatelessWidget {
                               "Resend code to",
                               style: TextStyle(
                                 fontFamily: 'Itim',
-                                color: state == 0 ? AppColors.blueColor : AppColors.greyColor,
+                                color: state == 0
+                                    ? AppColors.blueColor
+                                    : AppColors.greyColor,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.normal,
                               ),

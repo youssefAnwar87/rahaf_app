@@ -35,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
 
-                HeaderWidget(headerName: "Sign up now", headerLine:"Please fill the details and create account " ),
+                const HeaderWidget(headerName: "Sign up now", headerLine:"Please fill the details and create account " ),
                 Row(
                   children: [
                     Expanded(
@@ -94,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     if(value == null || value.trim().isEmpty){
                       return "please enter your password";
                     }
-                    if(value.trim()!.length < 6 || value.trim().length > 30){
+                    if(value.trim().length < 6 || value.trim().length > 30){
                       return "password should be >6 & <30";
                     }
                     return null;
@@ -113,8 +113,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }),
                 ),
                 const DropdownWidget(),
-                CustomButton(formKey: formKey,textInButton: "Sign up",),
-                FooterWidget(footerLine:"Already have an account?",
+                CustomButton(onPressed: () {
+                  
+                },textInButton: "Sign up",),
+                const FooterWidget(footerLine:"Already have an account?",
                     footerNavigationTextButton: "Sign in",
                     nextScreen: LoginScreen.routeName,)
               ],
