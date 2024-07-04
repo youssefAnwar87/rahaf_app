@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/custom_button.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
+import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/customs/text_field_item.dart';
@@ -33,38 +36,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: 120.h, right: 110.w, left: 110.w, bottom: 12.h),
-                  child: Text(
-                    "Sign up now",
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: Colors.black,
-                        fontSize: 26.sp,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 50.w,
-                    right: 50.w,
-                    bottom: 50.h,
-                  ),
-                  child: Container(
-                    child: Center(
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        "Please fill the details and create account",
-                        style: TextStyle(
-                            fontFamily: 'Itim',
-                            color: AppColors.greyColor,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                  ),
-                ),
+
+                HeaderWidget(headerName: "Sign up now", headerLine:"Please fill the details and create account " ),
                 Row(
                   children: [
                     Expanded(
@@ -191,64 +164,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if(formKey.currentState?.validate() == true) {
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.blueColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(16.r)))),
-                    child: Container(
-                      height: 56.h,
-                      width: 335.w,
-                      child: Center(
-                        child: Text(
-                          "sign up",
-                          style: TextStyle(
-                              fontFamily: 'Itim',
-                              color: Colors.white,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.normal),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Already have an account",
-                      style: TextStyle(
-                          fontFamily: 'Itim',
-                          color: AppColors.greyColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.normal),
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(LoginScreen.routeName);
-                      },
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                            fontFamily: 'Itim',
-                            color: AppColors.blueColor,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    )
-                  ],
-                )
+                CustomButton(formKey: formKey,textInButton: "Sign up",),
+                FooterWidget(footerLine:"Already have an account?",
+                    footerNavigationTextButton: "Sign in",
+                    nextScreen: LoginScreen.routeName,)
               ],
             ),
           ),
