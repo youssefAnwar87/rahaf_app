@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/core/theme/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.textInButton, required this.onPressed});
+  const CustomButton(
+      {super.key, required this.textInButton, required this.onPressed});
 
   final String textInButton;
   final void Function() onPressed;
@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.blueColor,
+            backgroundColor: Theme.of(context).primaryColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16.r)))),
         child: SizedBox(
@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
               textInButton,
               style: TextStyle(
                   fontFamily: 'Itim',
-                  color: Colors.white,
+                  color: Theme.of(context).textTheme.displayLarge?.color,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.normal),
             ),

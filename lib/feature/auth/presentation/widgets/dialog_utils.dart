@@ -16,8 +16,8 @@ class DialogUtils {
             content: Row(
               children: [
                 Text(message,
-                    style: const TextStyle(color: AppColors.whiteColor)),
-                const CircularProgressIndicator(color: AppColors.whiteColor),
+                    style: TextStyle(color: Theme.of(context).textTheme.displayLarge?.color)),
+              CircularProgressIndicator(color:Theme.of(context).colorScheme.surfaceContainer),
               ],
             ),
           );
@@ -38,7 +38,7 @@ class DialogUtils {
               borderRadius:
                   BorderRadius.circular(24.r), // Adjust the border radius here
             ),
-            backgroundColor: AppColors.whiteColor,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             content: IntrinsicHeight(
               child: Column(
                 children: [
@@ -46,12 +46,12 @@ class DialogUtils {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircleAvatar(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Theme.of(context).primaryColor,
                         radius: 20.r,
-                        child: const ImageIcon(
-                          AssetImage(AppAssets.forgetPassword),
+                        child: ImageIcon(
+                         const AssetImage(AppAssets.forgetPassword),
                           size: 45,
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.surfaceContainer ,
                         ),
                       ),
                     ],
@@ -64,7 +64,7 @@ class DialogUtils {
                     title,
                     style: TextStyle(
                         fontFamily: 'Itim',
-                        color: Colors.black,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.normal),
                   ),
@@ -73,7 +73,7 @@ class DialogUtils {
                     "We have send password recovery instruction to your phone number",
                     style: TextStyle(
                         fontFamily: 'Itim',
-                        color: AppColors.greyColor,
+                        color: Theme.of(context).textTheme.bodySmall?.color,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.normal),
                   ),
@@ -83,10 +83,10 @@ class DialogUtils {
             actions: [
               TextButton(
                   onPressed: () {
-                    GoRouter.of(context).push(RoutesNames.otp);
+                    GoRouter.of(context).pushNamed(RoutesNames.otp);
                   },
-                  child: const Text("Ok",
-                      style: TextStyle(color: AppColors.blackColor)))
+                  child: Text("Ok",
+                      style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)))
             ],
           );
         });

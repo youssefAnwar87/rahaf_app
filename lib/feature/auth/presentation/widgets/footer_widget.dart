@@ -22,7 +22,7 @@ class FooterWidget extends StatelessWidget {
           footerLine,
           style: TextStyle(
               fontFamily: 'Itim',
-              color: AppColors.greyColor,
+              color: Theme.of(context).textTheme.bodySmall?.color,
               fontSize: 16.sp,
               fontWeight: FontWeight.normal),
         ),
@@ -31,13 +31,13 @@ class FooterWidget extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            GoRouter.of(context).pushReplacement(nextScreen);
+            GoRouter.of(context).pushReplacementNamed(nextScreen);
           },
           child: Text(
             footerNavigationTextButton,
             style: TextStyle(
                 fontFamily: 'Itim',
-                color: AppColors.blueColor,
+                color: Theme.of(context).textTheme.displayMedium?.color,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.normal),
           ),

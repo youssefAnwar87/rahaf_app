@@ -28,12 +28,12 @@ class OTPVerificationScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: AppColors.whiteColor,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           title: const Text("Forget Password"),
           leading: IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.keyboard_arrow_left,
-              color: AppColors.blackColor,
+              color: Theme.of(context).dividerColor,
             ),
             onPressed: () {
               GoRouter.of(context).pop();
@@ -41,7 +41,7 @@ class OTPVerificationScreen extends StatelessWidget {
           ),
         ),
         body: Container(
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,7 +58,7 @@ class OTPVerificationScreen extends StatelessWidget {
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontFamily: 'Itim',
-                      color: AppColors.blackColor,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.normal,
                     ),
@@ -89,8 +89,8 @@ class OTPVerificationScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Itim',
                                 color: state == 0
-                                    ? AppColors.blueColor
-                                    : AppColors.greyColor,
+                                    ? Theme.of(context).textTheme.bodyMedium?.color
+                                    : Theme.of(context).textTheme.bodySmall?.color,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.normal,
                               ),
@@ -101,7 +101,7 @@ class OTPVerificationScreen extends StatelessWidget {
                             formatTime(state),
                             style: TextStyle(
                               fontFamily: 'Itim',
-                              color: AppColors.greyColor,
+                              color: Theme.of(context).textTheme.bodySmall?.color,
                               fontSize: 14.sp,
                               fontWeight: FontWeight.normal,
                             ),

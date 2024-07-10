@@ -19,7 +19,7 @@ class PinputWidget extends StatelessWidget {
         style: Theme.of(context)
             .textTheme
             .labelMedium!
-            .copyWith(color: AppColors.darkBlueColor),
+            .copyWith(color: Theme.of(context).textTheme.displayMedium?.color),
       ),
       length: 4,
       defaultPinTheme: PinTheme(
@@ -27,10 +27,10 @@ class PinputWidget extends StatelessWidget {
         height: 56,
         textStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
             color: isError != null && isError!
-                ? AppColors.redColor
-                : AppColors.darkBlueColor),
+                ? Theme.of(context).textTheme.displaySmall?.color
+                : Theme.of(context).textTheme.displayMedium?.color),
         decoration: BoxDecoration(
-          color: AppColors.lightGreyColor,
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -40,9 +40,9 @@ class PinputWidget extends StatelessWidget {
         textStyle: Theme.of(context)
             .textTheme
             .labelMedium!
-            .copyWith(color: AppColors.darkBlueColor),
+            .copyWith(color: Theme.of(context).textTheme.displayMedium?.color),
         decoration: BoxDecoration(
-          color: AppColors.lightGreyColor,
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(12),
         ),
       ),

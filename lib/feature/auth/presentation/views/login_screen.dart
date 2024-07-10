@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Form(
         key: formKey,
         child: Container(
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -67,8 +67,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   suffixIcon: InkWell(
                       child: isObsecure
                           ? const Icon(Icons.visibility_off)
-                          : const Icon(Icons.visibility,
-                              color: Color(0xff7D848D)),
+                          : Icon(Icons.visibility,
+                              color : Theme.of(context).cardColor),
                       onTap: () {
                         if (isObsecure) {
                           isObsecure = false;
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    GoRouter.of(context).push(RoutesNames.forgetPassword);
+                    GoRouter.of(context).pushNamed(RoutesNames.forgetPassword);
                   },
                   child: Padding(
                     padding: EdgeInsets.only(right: 10.w),
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       textAlign: TextAlign.end,
                       style: TextStyle(
                           fontFamily: 'Itim',
-                          color: Colors.blue,
+                          color: Theme.of(context).primaryColor,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.normal),
                     ),

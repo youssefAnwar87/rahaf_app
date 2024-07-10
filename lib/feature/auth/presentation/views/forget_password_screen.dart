@@ -24,12 +24,12 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: AppColors.whiteColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const Text("Forget Password"),
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.keyboard_arrow_left, // Change this to the desired icon
-            color: AppColors.blackColor, // Change this to the desired color
+            color: Theme.of(context).dividerColor, // Change this to the desired color
           ),
           onPressed: () {
             GoRouter.of(context).pop(); // Navigate back to the previous screen
@@ -39,7 +39,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       body: Form(
         key: formKey,
         child: Container(
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

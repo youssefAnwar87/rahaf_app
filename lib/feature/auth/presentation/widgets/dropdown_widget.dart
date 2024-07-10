@@ -20,8 +20,8 @@ class _DropdownWidgetState extends State<DropdownWidget> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
-          color: const Color.fromARGB(255, 220, 220, 220),
-          border: Border.all(width: 2, color: AppColors.whiteColor),
+          color: Theme.of(context).colorScheme.surfaceContainerHigh,
+          border: Border.all(width: 2, color: Theme.of(context).colorScheme.surfaceContainer),
         ),
         child: DropdownButton<String>(
           icon: const Icon(Icons.keyboard_arrow_down), // Customize the icon here
@@ -29,23 +29,23 @@ class _DropdownWidgetState extends State<DropdownWidget> {
           padding: const EdgeInsets.all(5),
           isExpanded: true,
           value: selectedcity,
-          items: const [
+          items: [
             DropdownMenuItem<String>(
               value: "gz",
               child: Text(
                 "Giza",
-                style: TextStyle(color: AppColors.blackColor),
+                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
               ),
             ),
             DropdownMenuItem<String>(
               value: "cr",
               child:
-                  Text("Cairo", style: TextStyle(color: AppColors.blackColor)),
+                  Text("Cairo", style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),
             ),
             DropdownMenuItem<String>(
               value: "ax",
               child:
-                  Text("Alex", style: TextStyle(color: AppColors.blackColor)),
+                  Text("Alex", style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),
             ),
           ],
           onChanged: (selectedValue) {

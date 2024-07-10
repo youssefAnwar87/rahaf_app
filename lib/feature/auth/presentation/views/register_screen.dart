@@ -28,7 +28,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Form(
         key: formKey,
         child: Container(
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -101,7 +101,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   suffixIcon: InkWell(
                       child: isObsecure
                           ? const Icon(Icons.visibility_off)
-                          : const Icon(Icons.visibility, color: Color(0xff7D848D)),
+                          : Icon(Icons.visibility, color:Theme.of(context).cardColor),
                       onTap: () {
                         if (isObsecure) {
                           isObsecure = false;

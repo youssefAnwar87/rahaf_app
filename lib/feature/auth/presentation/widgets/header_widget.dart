@@ -19,7 +19,7 @@ class HeaderWidget extends StatelessWidget {
             headerName,
             style: TextStyle(
                 fontFamily: 'Itim',
-                color: Colors.black,
+                color: Theme.of(context).textTheme.bodyLarge?.color,
                 fontSize: 23.sp,
                 fontWeight: FontWeight.normal),
           ),
@@ -36,7 +36,7 @@ class HeaderWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'Itim',
-                  color: AppColors.greyColor,
+                  color: Theme.of(context).textTheme.bodySmall?.color,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.normal
               ),

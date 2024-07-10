@@ -30,21 +30,21 @@ class TextFieldItem extends StatelessWidget {
           padding: EdgeInsets.only(left: 24.w, right: 24.w, bottom: 20.h),
           child: TextFormField(
             decoration: InputDecoration(
-              fillColor: const Color.fromARGB(255, 220, 220, 220),
+              fillColor: Theme.of(context).colorScheme.surfaceContainerHigh,
               filled: true,
               errorStyle: TextStyle(fontSize: 15.sp),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.r),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                       width: 3,
-                      color: Colors.red
+                      color: Theme.of(context).colorScheme.secondaryContainer
                   )
               ),
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.r),
-                  borderSide: const BorderSide(
+                  borderSide:  BorderSide(
                       width: 3,
-                      color: Colors.red
+                      color: Theme.of(context).colorScheme.secondaryContainer
                   )
               ),
               focusedBorder: OutlineInputBorder(
@@ -60,10 +60,10 @@ class TextFieldItem extends StatelessWidget {
               labelStyle: Theme.of(context)
                   .textTheme
                   .titleMedium!
-                  .copyWith(color: const Color.fromARGB(255, 100, 100, 100)),
+                  .copyWith(color: Theme.of(context).textTheme.bodySmall?.color),
               suffixIcon: suffixIcon,
             ),
-            style: TextStyle(color: Colors.black, fontSize: 16.sp),
+            style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color, fontSize: 16.sp),
             validator: validator,
             controller: controller,
             obscureText: isObsecure,
