@@ -88,10 +88,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       "Forget password?",
                       textAlign: TextAlign.end,
                       style: TextStyle(
-                          fontFamily: 'Itim',
+                          fontFamily: 'Montserrat',
                           color: Theme.of(context).primaryColor,
                           fontSize: 16.sp,
-                          fontWeight: FontWeight.normal),
+                          fontWeight: FontWeight.w100
+                      ),
                     ),
                   ),
                 ),

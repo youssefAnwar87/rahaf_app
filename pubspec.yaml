@@ -62,6 +62,207 @@ flutter:
     - family: Itim
       fonts:
         - asset: assets\fonts\Itim-Regular.ttf
+    - family: SFProDisplay
+      fonts:
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.OTF
+          weight: 900
+          style: italic
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF
+          weight: 700
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.OTF
+          weight: 800
+          style: italic
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF
+          weight: 300
+          style: italic
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF
+          weight: 500
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF
+          weight: 400
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.OTF
+          weight: 600
+          style: italic
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF
+          weight: 100
+          style: italic
+        - asset: assets/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.OTF
+          weight: 200
+          style: italic
+    - family: SourceSans3
+      fonts:
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Source-Sans-3/SourceSans3-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+    - family: SfUiDisplay
+      fonts:
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-black.otf
+          weight: 900
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-bold.otf
+          weight: 700
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-heavy.otf
+          weight: 800
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-light.otf
+          weight: 300
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-medium.otf
+          weight: 500
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-semibold.otf
+          weight: 600
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-thin.otf
+          weight: 100
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-ultralight.otf
+          weight: 200
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat/Montserrat-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Montserrat/Montserrat-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Montserrat/Montserrat-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Montserrat/Montserrat-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat/Montserrat-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat/Montserrat-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat/Montserrat-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Montserrat/Montserrat-BlackItalic.ttf
+          weight: 900
+          style: italic
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins/Poppins-BlackItalic.ttf
+          weight: 900
+          style: italic
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter/Inter-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Inter/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter/Inter-Thin.ttf
+          weight: 100
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
