@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/core/routes/routes_manager.dart';
 import 'package:rahaf/core/theme/themes_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,10 +19,12 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            locale: DevicePreview.locale(context),
+            locale: Locale('ar'),
             theme: ThemesManager.lightTheme,
             builder: DevicePreview.appBuilder,
             routerConfig: RoutesManager.routes,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             
           );
         });

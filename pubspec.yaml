@@ -41,6 +41,9 @@ dependencies:
   pinput: ^5.0.0
   flutter_bloc: ^8.1.6
   go_router: ^14.2.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +61,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true # Add this line
   fonts:
     - family: Itim
       fonts:

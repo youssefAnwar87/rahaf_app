@@ -4,6 +4,7 @@ import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/dropdown_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../core/customs/text_field_item.dart';
 
@@ -34,19 +35,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
 
-                const HeaderWidget(headerName: "Sign up now", headerLine:"Please fill the details and create account " ),
+                 HeaderWidget(headerName: AppLocalizations.of(context)!.sign_up_now,
+                    headerLine:AppLocalizations.of(context)!.please_fill_the_details_and_create_account, ),
                 Row(
                   children: [
                     Expanded(
-                      child: TextFieldItem(hintText: "First name",
+                      child: TextFieldItem(hintText: AppLocalizations.of(context)!.first_name,
                           controller: firstNameController,
                         validator: (value){
                           if(value == null || value.trim().isEmpty){
-                            return "invalid name";
+                            return AppLocalizations.of(context)!.invalid_name;
                           }
                           bool namevalid = RegExp(r"^[a-zA-Z]+$").hasMatch(value);
                           if(!namevalid){
-                            return "invalid name";
+                            return AppLocalizations.of(context)!.invalid_name;
                           }
                           return null;
                         },
@@ -54,14 +56,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     Expanded(
-                      child: TextFieldItem(hintText: "Second name",
+                      child: TextFieldItem(hintText: AppLocalizations.of(context)!.second_name,
                           validator: (value){
                             if(value == null || value.trim().isEmpty){
-                              return "invalid name";
+                              return AppLocalizations.of(context)!.invalid_name;
                             }
                             bool namevalid = RegExp(r"^[a-zA-Z]+$").hasMatch(value);
                             if(!namevalid){
-                              return "invalid name";
+                              return AppLocalizations.of(context)!.invalid_name;
                             }
                             return null;
                           },
@@ -71,30 +73,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ],
                 ),
                 TextFieldItem(
-                  hintText: "phone",
+                  hintText: AppLocalizations.of(context)!.phone,
                   controller: phoneNumController,
                   keyboardType: null,
                   validator: (value){
                     if(value == null || value.trim().isEmpty){
-                      return "please enter your mobile number";
+                      return AppLocalizations.of(context)!.please_enter_your_password;
                     }
                     if(value.length!=11){
-                      return "The phone number should be at least 11 number";
+                      return AppLocalizations.of(context)!.the_phone_number_should_be_at_least_11_number;
                     }
                     return null;
                   },
                   suffixIcon: const Icon(Icons.phone_android),
                 ),
                 TextFieldItem(
-                  hintText: "password",
+                  hintText: AppLocalizations.of(context)!.password,
                   controller: passwordController,
                   isObsecure: isObsecure,
                   validator: (value){
                     if(value == null || value.trim().isEmpty){
-                      return "please enter your password";
+                      return AppLocalizations.of(context)!.please_enter_your_password;
                     }
                     if(value.trim().length < 6 || value.trim().length > 30){
-                      return "password should be >6 & <30";
+                      return AppLocalizations.of(context)!.password_should_be_6_30;
                     }
                     return null;
                   },
@@ -113,10 +115,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 const DropdownWidget(),
                 CustomButton(onPressed: () {
-                  
-                },textInButton: "Sign up",),
-                const FooterWidget(footerLine:"Already have an account?",
-                    footerNavigationTextButton: "Sign in",
+    if (formKey.currentState?.validate() == true) {}
+    },textInButton: AppLocalizations.of(context)!.sign_up_now,),
+                 FooterWidget(footerLine:AppLocalizations.of(context)!.already_have_an_account,
+                    footerNavigationTextButton: AppLocalizations.of(context)!.sign_in,
                     nextScreen: RoutesNames.login,)
               ],
             ),

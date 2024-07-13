@@ -5,6 +5,8 @@ import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/dialog_utils.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class ForgetPasswordScreen extends StatefulWidget {
 
@@ -25,7 +27,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: const Text("Forget Password"),
+        title:  Text(AppLocalizations.of(context)!.forget_password),
         leading: IconButton(
           icon: Icon(
             Icons.keyboard_arrow_left, // Change this to the desired icon
@@ -44,20 +46,20 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const HeaderWidget(
-                    headerName: "Forget Password",
+                 HeaderWidget(
+                    headerName: AppLocalizations.of(context)!.forget_password,
                     headerLine:
-                        "Enter your phone number to reset  your password"),
+                    AppLocalizations.of(context)!.enter_your_phone_number_to_reset_your_password),
                 TextFieldItem(
-                  hintText: "Phone or E-mail",
+                  hintText: AppLocalizations.of(context)!.phone_or_email,
                   controller: forgetPasswordController,
                   keyboardType: TextInputType.phone,
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return "please enter your mobile number";
+                      return AppLocalizations.of(context)!.please_enter_your_mobile_number;
                     }
                     if (value.length != 11) {
-                      return "The phone number should be at least 11 number";
+                      return AppLocalizations.of(context)!.the_phone_number_should_be_at_least_11_number;
                     }
                     return null;
                   },
@@ -65,10 +67,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 CustomButton(
                     onPressed: () {
                       if (formKey.currentState?.validate() == true) {
-                        DialogUtils.kShowDialog(context, "Check your messages");
+                        DialogUtils.kShowDialog(context, AppLocalizations.of(context)!.check_your_messages);
                       }
                     },
-                    textInButton: "Reset Password"),
+                    textInButton: AppLocalizations.of(context)!.reset_password),
               ],
             ),
           ),

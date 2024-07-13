@@ -1,0 +1,32 @@
+{
+  "sign_up": "سجل",
+  "dont_have_an_account": "لا تملك حساب؟",
+  "sign_in": "تسجيل الدخول",
+  "password_should_be_6_30": "يجب أن تكون كلمة المرور أكثر من 6 وأقل من 30",
+  "please_enter_your_password": "يرجى إدخال كلمة المرور الخاصة بك",
+  "password": "كلمة المرور",
+  "the_phone_number_should_be_at_least_11_number": "يجب أن يكون رقم الهاتف على الأقل 11 رقمًا",
+  "please_enter_your_mobile_number": "يرجى إدخال رقم هاتفك المحمول",
+  "phone": "الهاتف",
+  "please_sign_in_to_continue_our_app": "يرجى تسجيل الدخول لمتابعة استخدام التطبيق",
+  "sign_in_now": "سجل الدخول الآن",
+  "forget_password": "هل نسيت كلمة المرور؟",
+  "second_name": "الاسم الثاني",
+  "invalid_name": "اسم غير صالح",
+  "first_name": "الاسم الأول",
+  "please_fill_the_details_and_create_account": "يرجى ملء التفاصيل وإنشاء حساب",
+  "sign_up_now": "سجل الآن",
+  "already_have_an_account": "هل لديك حساب بالفعل؟",
+  "resend_code_to": "أعد إرسال الرمز إلى",
+  "verify": "تحقق",
+  "otp_code": "رمز OTP",
+  "please_check_your_email_wwwuihutgmailcom_to_see_the_verification_code": "يرجى التحقق من بريدك الإلكتروني www.uihut@gmail.com لرؤية رمز التحقق",
+  "otp_verification": "التحقق من OTP",
+  "reset_password": "إعادة تعيين كلمة المرور",
+  "check_your_messages": "تحقق من رسائلك",
+  "phone_or_email": "الهاتف أو البريد الإلكتروني",
+  "enter_your_phone_number_to_reset_your_password": "أدخل رقم هاتفك لإعادة تعيين كلمة المرور",
+  "we_have_sent_password_recovery_instruction_to_your_phone_number": "لقد أرسلنا تعليمات استعادة كلمة المرور إلى رقم هاتفك"
+
+
+}

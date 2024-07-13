@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_assets.dart';
 import 'package:rahaf/core/theme/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class DialogUtils {
   static void showLoading(BuildContext context, String message) {
@@ -70,7 +72,7 @@ class DialogUtils {
                   ),
                   Text(
                     textAlign: TextAlign.center,
-                    "We have send password recovery instruction to your phone number",
+                    AppLocalizations.of(context)!.we_have_sent_password_recovery_instruction_to_your_phone_number,
                     style: TextStyle(
                         fontFamily: 'Itim',
                         color: Theme.of(context).textTheme.bodySmall?.color,
