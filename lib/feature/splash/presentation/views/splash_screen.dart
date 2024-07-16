@@ -4,6 +4,8 @@ import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_assets.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }

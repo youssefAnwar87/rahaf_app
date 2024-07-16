@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_assets.dart';
-import 'package:rahaf/core/theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:rahaf/core/theme/custom_text_styles.dart';
 
 class DialogUtils {
   static void showLoading(BuildContext context, String message) {
@@ -18,8 +17,11 @@ class DialogUtils {
             content: Row(
               children: [
                 Text(message,
-                    style: TextStyle(color: Theme.of(context).textTheme.displayLarge?.color)),
-              CircularProgressIndicator(color:Theme.of(context).colorScheme.surfaceContainer),
+                    style: TextStyle(
+                        color:
+                            Theme.of(context).textTheme.displayLarge?.color)),
+                CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.surfaceContainer),
               ],
             ),
           );
@@ -51,9 +53,9 @@ class DialogUtils {
                         backgroundColor: Theme.of(context).primaryColor,
                         radius: 20.r,
                         child: ImageIcon(
-                         const AssetImage(AppAssets.forgetPassword),
+                          const AssetImage(AppAssets.forgetPassword),
                           size: 45,
-                          color: Theme.of(context).colorScheme.surfaceContainer ,
+                          color: Theme.of(context).colorScheme.surfaceContainer,
                         ),
                       ),
                     ],
@@ -64,20 +66,17 @@ class DialogUtils {
                   Text(
                     textAlign: TextAlign.center,
                     title,
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.normal),
+                    style: CustomTextStyles.itimRegular18.copyWith(
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                    ),
                   ),
                   Text(
                     textAlign: TextAlign.center,
-                    AppLocalizations.of(context)!.we_have_sent_password_recovery_instruction_to_your_phone_number,
-                    style: TextStyle(
-                        fontFamily: 'Itim',
-                        color: Theme.of(context).textTheme.bodySmall?.color,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.normal),
+                    AppLocalizations.of(context)!
+                        .we_have_sent_password_recovery_instruction_to_your_phone_number,
+                    style: CustomTextStyles.itimRegular16.copyWith(
+                      color: Theme.of(context).textTheme.bodySmall?.color,
+                    ),
                   ),
                 ],
               ),
@@ -88,7 +87,8 @@ class DialogUtils {
                     GoRouter.of(context).pushNamed(RoutesNames.otp);
                   },
                   child: Text("Ok",
-                      style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)))
+                      style: TextStyle(
+                          color: Theme.of(context).textTheme.bodyLarge?.color)))
             ],
           );
         });

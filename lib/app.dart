@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            locale: Locale('ar'),
+            locale: const Locale('ar'),
             theme: ThemesManager.lightTheme,
             builder: DevicePreview.appBuilder,
             routerConfig: RoutesManager.routes,

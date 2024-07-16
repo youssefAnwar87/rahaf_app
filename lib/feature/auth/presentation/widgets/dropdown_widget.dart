@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rahaf/core/theme/app_colors.dart';
+import 'package:rahaf/core/theme/custom_text_styles.dart';
 
 class DropdownWidget extends StatefulWidget {
   const DropdownWidget({super.key});
@@ -10,8 +10,7 @@ class DropdownWidget extends StatefulWidget {
 }
 
 class _DropdownWidgetState extends State<DropdownWidget> {
-
-    var selectedcity ="gz";
+  var selectedcity = "gz";
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +20,12 @@ class _DropdownWidgetState extends State<DropdownWidget> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
           color: Theme.of(context).colorScheme.surfaceContainerHigh,
-          border: Border.all(width: 2, color: Theme.of(context).colorScheme.surfaceContainer),
+          border: Border.all(
+              width: 2, color: Theme.of(context).colorScheme.surfaceContainer),
         ),
         child: DropdownButton<String>(
-          icon: const Icon(Icons.keyboard_arrow_down), // Customize the icon here
+          icon:
+              const Icon(Icons.keyboard_arrow_down), // Customize the icon here
 
           padding: const EdgeInsets.all(5),
           isExpanded: true,
@@ -34,18 +35,24 @@ class _DropdownWidgetState extends State<DropdownWidget> {
               value: "gz",
               child: Text(
                 "Giza",
-                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
+                style: CustomTextStyles.montserratRegular16.copyWith(
+                    color: Theme.of(context).textTheme.bodyLarge?.color),
               ),
             ),
             DropdownMenuItem<String>(
               value: "cr",
-              child:
-                  Text("Cairo", style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),
+              child: Text("Cairo",
+                  style: CustomTextStyles.montserratRegular16.copyWith(
+                    color: Theme.of(context).textTheme.bodyLarge?.color),
+              ),
             ),
             DropdownMenuItem<String>(
               value: "ax",
-              child:
-                  Text("Alex", style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color)),
+              child: Text("Alex",
+                  style: CustomTextStyles.montserratRegular16.copyWith(
+                    color: Theme.of(context).textTheme.bodyLarge?.color),
+              
+                      ),
             ),
           ],
           onChanged: (selectedValue) {

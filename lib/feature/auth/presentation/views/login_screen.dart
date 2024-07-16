@@ -1,17 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/customs/text_field_item.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
+import 'package:rahaf/core/theme/custom_text_styles.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class LoginScreen extends StatefulWidget {
-
   const LoginScreen({super.key});
 
   @override
@@ -35,9 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                 HeaderWidget(
+                HeaderWidget(
                   headerName: AppLocalizations.of(context)!.sign_in_now,
-                  headerLine: AppLocalizations.of(context)!.please_sign_in_to_continue_our_app,
+                  headerLine: AppLocalizations.of(context)!
+                      .please_sign_in_to_continue_our_app,
                 ),
                 TextFieldItem(
                   hintText: AppLocalizations.of(context)!.phone,
@@ -45,10 +44,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.phone, // Update this line
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return AppLocalizations.of(context)!.please_enter_your_mobile_number;
+                      return AppLocalizations.of(context)!
+                          .please_enter_your_mobile_number;
                     }
                     if (value.length != 11) {
-                      return AppLocalizations.of(context)!.the_phone_number_should_be_at_least_11_number;
+                      return AppLocalizations.of(context)!
+                          .the_phone_number_should_be_at_least_11_number;
                     }
                     return null;
                   },
@@ -60,10 +61,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   isObsecure: isObsecure,
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return AppLocalizations.of(context)!.please_enter_your_password;
+                      return AppLocalizations.of(context)!
+                          .please_enter_your_password;
                     }
                     if (value.trim().length < 6 || value.trim().length > 30) {
-                      return AppLocalizations.of(context)!.password_should_be_6_30;
+                      return AppLocalizations.of(context)!
+                          .password_should_be_6_30;
                     }
                     return null;
                   },
@@ -71,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: isObsecure
                           ? const Icon(Icons.visibility_off)
                           : Icon(Icons.visibility,
-                              color : Theme.of(context).cardColor),
+                              color: Theme.of(context).cardColor),
                       onTap: () {
                         if (isObsecure) {
                           isObsecure = false;
@@ -88,25 +91,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Padding(
                     padding: EdgeInsets.only(right: 10.w),
                     child: Text(
-                        AppLocalizations.of(context)!.forget_password,
+                      AppLocalizations.of(context)!.forget_password,
                       textAlign: TextAlign.end,
-                      style: TextStyle(
-                          fontFamily: 'Itim',
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.normal),
+                      style: CustomTextStyles.itimRegular14.copyWith(
+                        color: Theme.of(context).primaryColor,
+                      ),
                     ),
                   ),
                 ),
                 CustomButton(
                   onPressed: () {
-    if (formKey.currentState?.validate() == true) {}
-    },
+                    if (formKey.currentState?.validate() == true) {}
+                  },
                   textInButton: AppLocalizations.of(context)!.sign_in,
                 ),
-                 FooterWidget(
-                    footerLine: AppLocalizations.of(context)!.dont_have_an_account,
-                    footerNavigationTextButton: AppLocalizations.of(context)!.sign_up,
+                FooterWidget(
+                    footerLine:
+                        AppLocalizations.of(context)!.dont_have_an_account,
+                    footerNavigationTextButton:
+                        AppLocalizations.of(context)!.sign_up,
                     nextScreen: RoutesNames.register),
               ],
             ),

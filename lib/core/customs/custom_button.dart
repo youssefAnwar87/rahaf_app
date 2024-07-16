@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rahaf/core/theme/custom_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -23,11 +24,9 @@ class CustomButton extends StatelessWidget {
           child: Center(
             child: Text(
               textInButton,
-              style: TextStyle(
-                  fontFamily: 'Itim',
-                  color: Theme.of(context).textTheme.displayLarge?.color,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.normal),
+              style: CustomTextStyles.itimRegular16.copyWith(
+                color: Theme.of(context).textTheme.displayLarge?.color,
+              ),
             ),
           ),
         ),

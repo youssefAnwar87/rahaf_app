@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rahaf/core/theme/app_colors.dart';
+import 'package:rahaf/core/theme/custom_text_styles.dart';
 
 class FooterWidget extends StatelessWidget {
   final String footerLine;
@@ -20,11 +20,9 @@ class FooterWidget extends StatelessWidget {
       children: [
         Text(
           footerLine,
-          style: TextStyle(
-              fontFamily: 'Itim',
-              color: Theme.of(context).textTheme.bodySmall?.color,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.normal),
+          style: CustomTextStyles.itimRegular14.copyWith(
+            color: Theme.of(context).textTheme.bodySmall?.color,
+          ),
         ),
         SizedBox(
           width: 5.w,
@@ -35,11 +33,9 @@ class FooterWidget extends StatelessWidget {
           },
           child: Text(
             footerNavigationTextButton,
-            style: TextStyle(
-                fontFamily: 'Itim',
-                color: Theme.of(context).textTheme.displayMedium?.color,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.normal),
+            style: CustomTextStyles.itimRegular14.copyWith(
+              color: Theme.of(context).textTheme.displayMedium?.color,
+            ),
           ),
         )
       ],

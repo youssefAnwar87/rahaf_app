@@ -152,6 +152,8 @@ flutter:
           weight: 100
         - asset: assets/fonts/sf-ui-display/sf-ui-display-ultralight.otf
           weight: 200
+        - asset: assets/fonts/sf-ui-display/sf-ui-display-regular.otf
+          weight: 400
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat/Montserrat-Thin.ttf

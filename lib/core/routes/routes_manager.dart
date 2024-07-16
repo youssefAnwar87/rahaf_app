@@ -13,7 +13,7 @@ abstract class RoutesManager {
     GoRoute(
         path: RoutesNames.splash,
         name: RoutesNames.splash,
-        builder: (context, state) => SplashScreen()),
+        builder: (context, state) => const SplashScreen()),
     GoRoute(
         path: RoutesNames.login,
         name: RoutesNames.login,
