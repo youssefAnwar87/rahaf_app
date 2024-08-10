@@ -8,6 +8,7 @@ class AppColors {
 
   // Additional colors
   static const darkBlueColor = Color(0xFF1B1E28);
+  static const gunmetalColor = Color(0xFF2E323E);
   static const lightGreyColor = Color(0xFFF7F7F9);
   static const yellowColor = Color(0xFFFFD336);
   static const darkGreyColor = Color(0xFF33363F);

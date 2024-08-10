@@ -9,21 +9,20 @@ abstract class ThemesManager {
       fontFamily: 'Item',
       scaffoldBackgroundColor: AppColors.whiteColor,
       dividerColor: AppColors.blackColor,
-            cardColor: AppColors.greyColor,
-
+      cardColor: AppColors.greyColor,
       textTheme: const TextTheme(
-        bodyLarge: TextStyle(color:AppColors.blackColor),
-        bodyMedium: TextStyle(color:AppColors.blueColor),
+        bodyLarge: TextStyle(color: AppColors.blackColor),
+        bodyMedium: TextStyle(color: AppColors.blueColor),
         bodySmall: TextStyle(color: AppColors.greyColor),
         displayLarge: TextStyle(color: AppColors.whiteColor),
-        displayMedium: TextStyle(color:AppColors.darkBlueColor ),
-        displaySmall: TextStyle(color: AppColors.redColor)
-        
+        displayMedium: TextStyle(color: AppColors.darkBlueColor),
+        displaySmall: TextStyle(color: AppColors.redColor),
+        headlineLarge: TextStyle(color: AppColors.orangeColor)
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         surfaceContainer: AppColors.whiteColor,
         surfaceContainerHigh: AppColors.lightGreyColor,
         surfaceContainerHighest: AppColors.lightGreyColor,
         secondaryContainer: AppColors.redColor,
-));
+      ));
 }

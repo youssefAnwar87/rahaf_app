@@ -4,6 +4,7 @@ import 'package:rahaf/feature/auth/presentation/views/forget_password_screen.dar
 import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/otp_verification_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
+import 'package:rahaf/feature/home/presentation/views/home_layout_screen.dart';
 import 'package:rahaf/feature/profile/profile_screen.dart';
 import 'package:rahaf/feature/splash/presentation/views/splash_screen.dart';
 
@@ -32,6 +33,11 @@ abstract class RoutesManager {
     GoRoute(
         path: RoutesNames.profile,
         name: RoutesNames.profile,
-        builder: (context, state) => const ProfileScreen())
+        builder: (context, state) => const ProfileScreen()),
+    GoRoute(
+      path: RoutesNames.homeLayout,
+      name: RoutesNames.homeLayout,
+      builder: (context, state) => const HomeLayout(),
+    )
   ]);
 }

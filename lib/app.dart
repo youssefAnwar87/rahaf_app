@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rahaf/core/routes/routes_manager.dart';
-import 'package:rahaf/core/shared/usecases/poviders.dart';
+import 'package:rahaf/core/shared/usecases/providers.dart';
 import 'package:rahaf/core/theme/themes_manager.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             providers: providers,
             child: MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              locale: const Locale('ar'),
+              locale: const Locale('en'),
               theme: ThemesManager.lightTheme,
               builder: DevicePreview.appBuilder,
               routerConfig: RoutesManager.routes,

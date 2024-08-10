@@ -9,6 +9,7 @@ import 'package:rahaf/feature/auth/data/repos/auth_repo_impl.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/login/login_cubit.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/otp/otp_cubit.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/register/register_cubit.dart';
+import 'package:rahaf/feature/home/presentation/views_model/home_layout/home_layout_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 GetIt locator = GetIt.instance;
@@ -18,11 +19,12 @@ Future<void> setupLocator() async {
   locator.registerFactory(() => OTPCubit()..startTimer());
   locator.registerFactory(() => RegisterCubit(locator()));
   locator.registerFactory(() => LoginCubit(locator()));
+  locator.registerFactory(() => HomeLayoutCubit());
   // //CORE
 
   // //REPOSITORISE
   locator.registerLazySingleton<AuthRepository>(
-      () => AuthImplRepository(locator() , locator()));
+      () => AuthImplRepository(locator(), locator()));
 
   // //DATASOURSE
   locator.registerLazySingleton(() => ApiServiceAuth());

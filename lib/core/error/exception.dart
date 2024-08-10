@@ -22,7 +22,6 @@ class Failure {
 class UnknownException extends Failure {
   final String? errMessage;
   UnknownException([this.errMessage]) : super(errorMessage: errMessage);
-
   @override
   String toString() {
     if ((errMessage ?? '').isNotEmpty) {
@@ -32,7 +31,6 @@ class UnknownException extends Failure {
     }
   }
 }
-
 class ErrorHandler {
   static Failure handle(dynamic error) {
     if (error is DioException) {
@@ -53,5 +51,4 @@ class ErrorHandler {
     }
   }
 }
-
 class NoInternetException implements Exception {}

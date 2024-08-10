@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        GoRouter.of(context).pushReplacementNamed(RoutesNames.login);
+        GoRouter.of(context).pushReplacementNamed(RoutesNames.homeLayout);
       }
     });
   }

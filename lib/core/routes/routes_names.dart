@@ -5,4 +5,5 @@ abstract class RoutesNames {
   static const String forgetPassword = "/forget-password";
   static const String otp = "/otp";
   static const String profile = "/profile";
+  static const String homeLayout = "/home-layout";
 }
