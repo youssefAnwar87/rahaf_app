@@ -10,6 +10,7 @@ import 'package:rahaf/feature/auth/presentation/views_model/login/login_cubit.da
 import 'package:rahaf/feature/auth/presentation/views_model/otp/otp_cubit.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/register/register_cubit.dart';
 import 'package:rahaf/feature/home/presentation/views_model/home_layout/home_layout_cubit.dart';
+import 'package:rahaf/feature/trips/presentation/views_model/destinations/destenations_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 GetIt locator = GetIt.instance;
@@ -20,6 +21,7 @@ Future<void> setupLocator() async {
   locator.registerFactory(() => RegisterCubit(locator()));
   locator.registerFactory(() => LoginCubit(locator()));
   locator.registerFactory(() => HomeLayoutCubit());
+  locator.registerFactory(() => DestenationsCubit());
   // //CORE
 
   // //REPOSITORISE

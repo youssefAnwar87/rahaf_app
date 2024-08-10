@@ -7,6 +7,7 @@ import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
 import 'package:rahaf/feature/home/presentation/views/home_layout_screen.dart';
 import 'package:rahaf/feature/profile/profile_screen.dart';
 import 'package:rahaf/feature/splash/presentation/views/splash_screen.dart';
+import 'package:rahaf/feature/trips/presentation/views/destinations_screen.dart';
 
 abstract class RoutesManager {
   static final routes = GoRouter(routes: [
@@ -38,6 +39,11 @@ abstract class RoutesManager {
       path: RoutesNames.homeLayout,
       name: RoutesNames.homeLayout,
       builder: (context, state) => const HomeLayout(),
-    )
+    ),
+    GoRoute(
+      path: RoutesNames.destinations,
+      name: RoutesNames.destinations,
+      builder: (context, state) => const DestinationsScreen(),
+    ),
   ]);
 }

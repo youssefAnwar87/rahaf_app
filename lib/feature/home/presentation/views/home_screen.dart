@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rahaf/core/theme/app_assets.dart';
-import 'package:rahaf/core/theme/app_colors.dart';
 import 'package:rahaf/core/theme/custom_text_styles.dart';
 import 'package:rahaf/feature/home/presentation/widgets/app_bar_home.dart';
 import 'package:rahaf/feature/home/presentation/widgets/title_home.dart';
@@ -14,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
