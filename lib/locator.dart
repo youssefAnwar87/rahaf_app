@@ -10,6 +10,9 @@ import 'package:rahaf/feature/auth/presentation/views_model/login/login_cubit.da
 import 'package:rahaf/feature/auth/presentation/views_model/otp/otp_cubit.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/register/register_cubit.dart';
 import 'package:rahaf/feature/home/presentation/views_model/home_layout/home_layout_cubit.dart';
+import 'package:rahaf/feature/trips/data/datasources/api_service_trips.dart';
+import 'package:rahaf/feature/trips/data/repos/trips_repo.dart';
+import 'package:rahaf/feature/trips/data/repos/trips_repo_impl.dart';
 import 'package:rahaf/feature/trips/presentation/views_model/destinations/destenations_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,15 +24,19 @@ Future<void> setupLocator() async {
   locator.registerFactory(() => RegisterCubit(locator()));
   locator.registerFactory(() => LoginCubit(locator()));
   locator.registerFactory(() => HomeLayoutCubit());
-  locator.registerFactory(() => DestenationsCubit());
+  locator.registerFactory(() => DestenationsCubit(locator()));
   // //CORE
 
   // //REPOSITORISE
   locator.registerLazySingleton<AuthRepository>(
       () => AuthImplRepository(locator(), locator()));
+  locator.registerLazySingleton<TripsRepo>(
+    () => TripsRepoImpl(locator()),
+  );
 
   // //DATASOURSE
   locator.registerLazySingleton(() => ApiServiceAuth());
+  locator.registerLazySingleton(() => ApiServiceTrips());
 
   // //EXTRNAL
   locator.registerLazySingleton(() => SharedPreferences.getInstance());

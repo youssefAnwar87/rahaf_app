@@ -30,7 +30,6 @@ class MyHttpOverrides extends HttpOverrides {
           return true;
         };
     } catch (e) {
-      print('Error: $e');
       rethrow;
     }
   }

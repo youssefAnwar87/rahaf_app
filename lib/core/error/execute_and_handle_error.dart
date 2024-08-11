@@ -4,18 +4,13 @@ import 'package:rahaf/core/error/exception.dart';
 import 'package:rahaf/core/shared/usecases/network_info.dart';
 import 'package:rahaf/locator.dart';
 
-
 Future<Either<String, T>> executeAndHandleError<T>(
   Future<T> Function() function,
 ) async {
   try {
-    final internet = await locator<NetworkChecker>().isConnected;
-    if (!internet) throw NoInternetException();
     final result = await function();
     return Right(result);
-  } catch (e, s) {
-    print('Exception in executeAndHandleError$e');
-    print('Stack trace in executeAndHandleError$s');
+  } catch (e) {
     final failure = ErrorHandler.handle(e);
     return Left(failure.errorMessage ?? "");
   }
@@ -30,18 +25,12 @@ Future<T> executeAndHandleErrorServer<T>(
     final result = await function();
     return result;
   } on DioException catch (error) {
-    if (error.response?.statusCode == 401) {
-      // homeKey.currentState?.pushNamed('/login');
-    }
-    print(error.response?.data);
     throw DioException(
         message: error.response?.data?["error_status"].toString(),
         requestOptions: error.requestOptions);
   } on NoInternetException {
     throw NoInternetException();
-  } on Exception catch (error, s) {
-    print('Exception in executeAndHandleError$error');
-    print('Stack trace in executeAndHandleError$s');
+  } on Exception catch (error) {
     throw Exception(error.toString());
   }
 }

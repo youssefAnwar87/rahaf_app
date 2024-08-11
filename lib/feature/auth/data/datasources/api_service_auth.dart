@@ -13,11 +13,10 @@ class ApiServiceAuth extends ApiBase {
           body: {"phone": phone, "password": password},
           contentType: "application/json",
           );
-      if (response.statusCode == 200  || response.statusCode == 201) {
+      if (response.statusCode == 200 ) {
         try {
           return UserModel.fromJson(response.json);
-        } catch (e, s) {
-          print(s);
+        } catch (e) {
           rethrow;
         }
       } else {
@@ -32,7 +31,7 @@ class ApiServiceAuth extends ApiBase {
 
       final response =
           await post(ServerConfig.register, body: model);
-      if (response.statusCode == 200 || response.statusCode == 201) {
+      if (response.statusCode == 200) {
         try {
           return UserModel.fromJson(response.json);
         } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
@@ -34,7 +36,6 @@ abstract class ApiBase {
 
     _dio.options.headers['Accept'] = '*/*';
 
-    print(path);
     try {
       switch (method) {
         case 'post':

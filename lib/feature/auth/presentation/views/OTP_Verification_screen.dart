@@ -10,8 +10,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../views_model/otp/otp_cubit.dart';
 
-class OTPVerificationScreen extends StatelessWidget {
-  OTPVerificationScreen({super.key});
+class OtpVerificationScreen extends StatelessWidget {
+  OtpVerificationScreen({super.key});
 
   final TextEditingController _controller = TextEditingController();
 

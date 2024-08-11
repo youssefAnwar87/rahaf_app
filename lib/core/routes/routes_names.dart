@@ -7,4 +7,5 @@ abstract class RoutesNames {
   static const String profile = "/profile";
   static const String homeLayout = "/home-layout";
   static const String destinations = "/destinations";
+  static const String hotels = '/hotels';
 }

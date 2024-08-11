@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/customs/custom_button.dart';
 import 'package:rahaf/feature/auth/presentation/views_model/register/register_cubit.dart';
-import 'package:rahaf/feature/auth/presentation/widgets/dropdown_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/footer_widget.dart';
 import 'package:rahaf/feature/auth/presentation/widgets/header_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           if (state is SuccessSignUpState) {
-            GoRouter.of(context).pushReplacementNamed(RoutesNames.profile);
+            GoRouter.of(context).pushReplacementNamed(RoutesNames.homeLayout);
           }
         },
         builder: (context, state) {

@@ -8,10 +8,12 @@ abstract class AppAssets {
   static const String profile = "${imagePath}profile.png";
   static const String longTrips = "${imagePath}long_trips.png";
   static const String dayYouth = "${imagePath}day_youth.png";
-  static const String alex = "${imagePath}alex.png";
-  static const String dahab = "${imagePath}dahab.png";
-  static const String sokhna = "${imagePath}sokhna.png";
-  static const String fayoum = "${imagePath}fayoum.png";
+  static const String alex = "${imagePath}alex.jpg";
+  static const String dahab = "${imagePath}dahab.jpg";
+  static const String sokhna = "${imagePath}sokhna.jpg";
+  static const String hurghada = "${imagePath}hurghada.jpg";
+  static const String sharm = "${imagePath}sharm.jpg";
+  static const String marsa = "${imagePath}marsa.jpg";
 
   // icons
   static const String notification = "${iconPath}notification.svg";

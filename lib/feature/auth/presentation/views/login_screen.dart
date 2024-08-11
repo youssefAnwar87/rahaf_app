@@ -20,11 +20,11 @@ class LoginScreen extends StatelessWidget {
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is SuccessLoginState) {
-            GoRouter.of(context).pushReplacementNamed(RoutesNames.profile);
+            GoRouter.of(context).pushReplacementNamed(RoutesNames.homeLayout);
           }
         },
         builder: (context, state) {
-                              var cubit = LoginCubit.get(context);
+          var cubit = LoginCubit.get(context);
 
           return Form(
             key: cubit.formKey,

@@ -8,6 +8,7 @@ import 'package:rahaf/feature/home/presentation/views/home_layout_screen.dart';
 import 'package:rahaf/feature/profile/profile_screen.dart';
 import 'package:rahaf/feature/splash/presentation/views/splash_screen.dart';
 import 'package:rahaf/feature/trips/presentation/views/destinations_screen.dart';
+import 'package:rahaf/feature/trips/presentation/views/hotels_screen.dart';
 
 abstract class RoutesManager {
   static final routes = GoRouter(routes: [
@@ -30,7 +31,7 @@ abstract class RoutesManager {
     GoRoute(
         path: RoutesNames.otp,
         name: RoutesNames.otp,
-        builder: (context, state) => OTPVerificationScreen()),
+        builder: (context, state) => OtpVerificationScreen()),
     GoRoute(
         path: RoutesNames.profile,
         name: RoutesNames.profile,
@@ -45,5 +46,6 @@ abstract class RoutesManager {
       name: RoutesNames.destinations,
       builder: (context, state) => const DestinationsScreen(),
     ),
+    GoRoute(path: RoutesNames.hotels,  name: RoutesNames.hotels, builder: (context, state) => const HotelsScreen())
   ]);
 }
