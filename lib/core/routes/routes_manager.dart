@@ -8,6 +8,7 @@ import 'package:rahaf/feature/home/presentation/views/home_layout_screen.dart';
 import 'package:rahaf/feature/profile/profile_screen.dart';
 import 'package:rahaf/feature/splash/presentation/views/splash_screen.dart';
 import 'package:rahaf/feature/trips/presentation/views/destinations_screen.dart';
+import 'package:rahaf/feature/trips/presentation/views/hotel_profile_screen.dart';
 import 'package:rahaf/feature/trips/presentation/views/hotels_screen.dart';
 
 abstract class RoutesManager {
@@ -46,6 +47,15 @@ abstract class RoutesManager {
       name: RoutesNames.destinations,
       builder: (context, state) => const DestinationsScreen(),
     ),
-    GoRoute(path: RoutesNames.hotels,  name: RoutesNames.hotels, builder: (context, state) => const HotelsScreen())
+    GoRoute(
+      path: RoutesNames.hotels,
+      name: RoutesNames.hotels,
+      builder: (context, state) => const HotelsScreen(),
+    ),
+    GoRoute(
+      path: RoutesNames.hotelProfile,
+      name: RoutesNames.hotelProfile,
+      builder: (context, state) => const HotelProfileScreen(),
+    ),
   ]);
 }

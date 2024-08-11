@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_colors.dart';
 import 'package:rahaf/core/theme/custom_text_styles.dart';
 import 'package:rahaf/feature/trips/presentation/views_model/destinations/destenations_cubit.dart';
@@ -37,7 +38,12 @@ class HotelsScreen extends StatelessWidget {
           },
         ),
       ),
-      body: BlocBuilder<DestenationsCubit, DestenationsState>(
+      body: BlocConsumer<DestenationsCubit, DestenationsState>(
+        listener: (context, state) {
+          if (state is HotelProfileSuccessState) {
+            GoRouter.of(context).push(RoutesNames.hotelProfile);
+          }
+        },
         builder: (context, state) {
           var cubit = DestenationsCubit.get(context);
 

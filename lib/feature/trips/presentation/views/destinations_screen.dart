@@ -6,6 +6,7 @@ import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_colors.dart';
 import 'package:rahaf/core/theme/custom_text_styles.dart';
 import 'package:rahaf/feature/trips/presentation/views_model/destinations/destenations_cubit.dart';
+import 'package:rahaf/feature/trips/presentation/widgets/destenations_grid_view.dart';
 
 class DestinationsScreen extends StatelessWidget {
   const DestinationsScreen({super.key});
@@ -62,59 +63,19 @@ class DestinationsScreen extends StatelessWidget {
                   SizedBox(
                     height: 30.h,
                   ),
-                  DestinationsGridView(images: cubit.images, titles: cubit.titles,)
+                  DestinationsGridView(
+                    images: cubit.images,
+                    titles: cubit.titles,
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
                 ],
               ),
             ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class DestinationsGridView extends StatelessWidget {
-  const DestinationsGridView({
-    super.key, required this.titles, required this.images,
-  });
-
-  final List<String> titles;
-  final List<String> images;
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: titles.length,
-      shrinkWrap: true,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10, mainAxisSpacing: 10, crossAxisCount: 2),
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            DestenationsCubit.get(context).getAllBuilding(index);
-          },
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                AspectRatio(
-                    aspectRatio: 1,
-                    child: Image.asset(
-                      images[index],
-                      fit: BoxFit.cover,
-                    )),
-                Text(
-                  titles[index],
-                  textAlign: TextAlign.center,
-                  style: CustomTextStyles.itimRegular32.copyWith(
-                      color: Theme.of(context).textTheme.displayLarge?.color),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
     );
   }
 }

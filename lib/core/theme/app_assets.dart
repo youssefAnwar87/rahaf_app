@@ -14,8 +14,11 @@ abstract class AppAssets {
   static const String hurghada = "${imagePath}hurghada.jpg";
   static const String sharm = "${imagePath}sharm.jpg";
   static const String marsa = "${imagePath}marsa.jpg";
+  static const String fayoum = "${imagePath}fayoum.jpg";
+  static const String hotelProfile = "${imagePath}hotel_profile.jpg";
 
   // icons
   static const String notification = "${iconPath}notification.svg";
   static const String underline = "${iconPath}underline.svg";
+  static const String topDivider = "${iconPath}top_divider.svg";
 }

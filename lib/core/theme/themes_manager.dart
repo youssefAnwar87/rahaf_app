@@ -23,6 +23,8 @@ abstract class ThemesManager {
         surfaceContainer: AppColors.whiteColor,
         surfaceContainerHigh: AppColors.lightGreyColor,
         surfaceContainerHighest: AppColors.lightGreyColor,
+
         secondaryContainer: AppColors.redColor,
+        surfaceContainerLowest: AppColors.darkBlueColor,
       ));
 }

@@ -12,3 +12,11 @@ final class HotelErrorState extends DestenationsState {}
 
 final class HotelSuccessState extends DestenationsState {}
 
+
+final class HotelProfileLoadingState extends DestenationsState {}
+
+
+final class HotelProfileErrorState extends DestenationsState {}
+
+
+final class HotelProfileSuccessState extends DestenationsState {}
