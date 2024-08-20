@@ -28,7 +28,7 @@ class HomeLayout extends StatelessWidget {
               type: BottomNavigationBarType.shifting,
               items: [
                 BottomNavigationBarItem(
-                  icon: cubit.index == 2
+                  icon: cubit.index == 0
                       ? const CircleAvatar(
                           radius: 25,
                           backgroundColor: AppColors.blueColor,
@@ -58,7 +58,7 @@ class HomeLayout extends StatelessWidget {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: cubit.index == 0
+                  icon: cubit.index == 2
                       ? const CircleAvatar(
                           radius: 25,
                           backgroundColor: AppColors.blueColor,

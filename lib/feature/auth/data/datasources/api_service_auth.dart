@@ -7,6 +7,7 @@ import 'package:rahaf/feature/auth/data/models/user_model.dart';
 import '../../../../core/shared/datasources/remote/api_base.dart';
 
 class ApiServiceAuth extends ApiBase {
+
   Future<UserModel> login(String phone, String password) async {
     return executeAndHandleErrorServer<UserModel>(() async {
       final response = await post(ServerConfig.login,

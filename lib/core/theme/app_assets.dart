@@ -16,6 +16,12 @@ abstract class AppAssets {
   static const String marsa = "${imagePath}marsa.jpg";
   static const String fayoum = "${imagePath}fayoum.jpg";
   static const String hotelProfile = "${imagePath}hotel_profile.jpg";
+  static const String bookmark = "${imagePath}bookmark.png";
+  static const String headphones_fill_duotone_line = "${imagePath}Headphones_fill_duotone_line.png";
+  static const String person = "${imagePath}person.png";
+  static const String plane_Trip_International = "${imagePath}Plane, Trip, International.png";
+  static const String settings = "${imagePath}Settings.png";
+  static const String edit = "${imagePath}Edit.png";
 
   // icons
   static const String notification = "${iconPath}notification.svg";

@@ -5,8 +5,6 @@ import 'package:rahaf/init_app.dart';
 
 //test
 void main() async{
-
-    await InitApp.initialize();
-
+  await InitApp.initialize();
   runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
 }

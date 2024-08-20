@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rahaf/feature/home/presentation/views/home_screen.dart';
 import 'package:rahaf/feature/home/presentation/views_model/home_layout/home_layout_state.dart';
 
+import '../../../../profile/profile_screen.dart';
+
 
 class HomeLayoutCubit extends Cubit<HomeLayoutStates> {
   HomeLayoutCubit() : super(HomeLayoutInitialState());
@@ -13,7 +15,7 @@ class HomeLayoutCubit extends Cubit<HomeLayoutStates> {
   List<Widget> screens = [
     Container(),
     const HomeScreen(),
-    Container()
+    const ProfileScreen()
   ];
 
   int index = 1;
