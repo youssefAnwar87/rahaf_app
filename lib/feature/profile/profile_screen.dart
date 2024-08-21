@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rahaf/core/routes/routes_names.dart';
 import 'package:rahaf/core/theme/app_assets.dart';
+import 'package:rahaf/feature/profile/editProfie_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
+//jajshjan
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,8 +79,7 @@ class ProfileScreen extends StatelessWidget {
                   iconAssetPath: AppAssets.person,
                   text: "Edit Profile",
                   onTap: () {
-                    // Edit Profile action
-                  },
+                    context.go(RoutesNames.editProfile);                 },
                 ),
                 ProfileMenuItem(
                   iconAssetPath: AppAssets.bookmark,

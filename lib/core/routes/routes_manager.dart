@@ -5,6 +5,7 @@ import 'package:rahaf/feature/auth/presentation/views/login_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/otp_verification_screen.dart';
 import 'package:rahaf/feature/auth/presentation/views/register_screen.dart';
 import 'package:rahaf/feature/home/presentation/views/home_layout_screen.dart';
+import 'package:rahaf/feature/profile/editProfie_screen.dart';
 import 'package:rahaf/feature/profile/profile_screen.dart';
 import 'package:rahaf/feature/splash/presentation/views/splash_screen.dart';
 import 'package:rahaf/feature/trips/presentation/views/destinations_screen.dart';
@@ -56,6 +57,11 @@ abstract class RoutesManager {
       path: RoutesNames.hotelProfile,
       name: RoutesNames.hotelProfile,
       builder: (context, state) => const HotelProfileScreen(),
+    ),
+    GoRoute(
+      path: RoutesNames.editProfile,
+      name: RoutesNames.editProfile,
+      builder: (context,state) =>  EditProfileScreen(),
     ),
   ]);
 }

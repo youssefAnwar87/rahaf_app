@@ -9,4 +9,5 @@ abstract class RoutesNames {
   static const String destinations = "/destinations";
   static const String hotels = '/hotels';
   static const String hotelProfile = '/hotel-profile';
+  static const String editProfile = '/edit-profile';
 }
